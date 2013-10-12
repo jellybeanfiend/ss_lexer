@@ -69,7 +69,7 @@ int main() {
 	// Save the program in the input file to an array
 	while((c = fgetc(input)) != EOF){
 		program[length] = c;
-		i++;
+		length++;
 	}
 	
 	// Process each character of the program array
@@ -88,6 +88,9 @@ int main() {
 // Finds comments in the program
 void comments(char* program){
 	// If the current character is a / and the next character is a *, we got ourselves a comment!
+	//printf("in array: %c,currentpos: %d", program[currentpos], currentpos);
+	//printf("in array: %c,currentpos: %d", program[currentpos++], currentpos);
+	//return;
 	if(program[currentpos] == '/' && program[currentpos++] == '*'){
 		// Iterate through each character in the comment until the ending */ is found
 		while(program[currentpos++] != '*' && program[currentpos+1] != '/'){
